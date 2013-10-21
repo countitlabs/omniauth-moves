@@ -3,7 +3,7 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Moves < OmniAuth::Strategies::OAuth2
-      DEFAULT_SCOPE = 'activity location'
+      DEFAULT_SCOPE = 'activity'
 
       option :client_options, {
         :site => 'https://api.moves-app.com/',
