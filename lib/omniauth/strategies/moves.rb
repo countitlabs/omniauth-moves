@@ -10,7 +10,12 @@ module OmniAuth
         :authorize_url => '/oauth/v1/authorize',
         :token_url => '/oauth/v1/access_token'
       }
-      
+
+      # provider does not really ignore state, but am getting
+      # error when returning via the moves: scheme link.
+      option :provider_ignores_state, true
+     
+ 
       uid { raw_info['userId'] }
       info do { :firstDate => (raw_info['profile'] || {})['firstDate'] } end
       extra do { :raw_info => raw_info } end
